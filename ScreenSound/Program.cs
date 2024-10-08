@@ -1,14 +1,16 @@
-﻿using ScreenSound.Menus;
+﻿using ScreenSound.Banco;
+using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
 //Nossa conexão que busca da pasta Connection
-try
-{
-
+try{
+    // "using" vai gerenciar os recursos de conexao, sendo assim os recursos só vão ser executados no escopo que eles estao sendo utilizados
+    using var connection = new Connection().ObterConexao();
+    connection.Open();
+    Console.WriteLine(connection.State); //Vai retornar o estado da nossa conexão
 }
-catch
-{
-
+catch (Exception ex){
+    Console.WriteLine(ex.Message);
 }
 
 Artista ira = new Artista("Ira!", "Banda Ira!");

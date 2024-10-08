@@ -11,8 +11,7 @@ namespace ScreenSound.Banco
     internal class Connection
     {
         //String de conexão, coletada nas propriedades do banco no campo "Cadeia de conexão"
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
+        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=False;TrustServerCertificate=False; ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public SqlConnection ObterConexao()
         {
             return new SqlConnection(connectionString);
