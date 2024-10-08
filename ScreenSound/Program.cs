@@ -1,6 +1,16 @@
 ﻿using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
+//Nossa conexão que busca da pasta Connection
+try
+{
+
+}
+catch
+{
+
+}
+
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");
 
