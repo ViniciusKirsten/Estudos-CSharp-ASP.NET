@@ -14,14 +14,14 @@
 - [x] Preparando o ambiente: SQL Server
 - [x] Preparando o ambiente: scripts do banco de dados
 - [x] Usando banco de dados
-- [ ] Conectando ao BD
-- [ ] Para saber mais: using
-- [ ] Consulta de Artistas
-- [ ] Para saber mais: ADO.NET
-- [ ] Incluindo Artista
-- [ ] Para saber mais: DAL e DAO
-- [ ] Estabelecendo conexão com ADO.NET
-- [ ] Faça como eu fiz: utilizando banco de dados
+- [x] Conectando ao BD
+- [x] Para saber mais: using
+- [x] Consulta de Artistas
+- [x] Para saber mais: ADO.NET
+- [x] Incluindo Artista
+- [x] Para saber mais: DAL e DAO
+- [x] Estabelecendo conexão com ADO.NET
+- [x] Faça como eu fiz: utilizando banco de dados
 - [ ] Mão na massa: incluindo os métodos Atualizar e Deletar
 - [ ] O que aprendemos?
 ### Bibliotecas ORM
