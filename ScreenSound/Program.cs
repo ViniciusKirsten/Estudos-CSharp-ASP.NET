@@ -1,7 +1,9 @@
 ﻿using ScreenSound.Banco;
 using ScreenSound.Menus;
 using ScreenSound.Modelos;
+using System.Linq.Expressions;
 
+/*CODIGO DA PRIMEIRA CONEXAO
 //Nossa conexão que busca da pasta Connection
 try{
     // "using" vai gerenciar os recursos de conexao, sendo assim os recursos só vão ser executados no escopo que eles estao sendo utilizados
@@ -12,6 +14,27 @@ try{
 catch (Exception ex){
     Console.WriteLine(ex.Message);
 }
+*/
+
+//buscando os dados do meu SQL
+try
+{
+    //adicionando a informação para dentro do banco
+    var artistaDAL = new ArtistaDAL();
+    artistaDAL.Adicionar(new Artista("Nome Artista","finge que tem uma bio"));
+    var listaArtistas = artistaDAL.listar();
+    foreach ( var artist in listaArtistas)
+    {
+        Console.WriteLine(artist);
+    }
+}
+catch (Exception ex)
+{
+
+    Console.WriteLine(ex.Message);
+}
+
+return;
 
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");

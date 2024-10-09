@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenSound.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
