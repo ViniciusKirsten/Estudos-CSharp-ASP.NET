@@ -68,10 +68,23 @@ namespace ScreenSound.Banco
             command.Parameters.AddWithValue("@nome", artista.Nome);
             command.Parameters.AddWithValue("@perfilPadrao", artista.FotoPerfil);
             command.Parameters.AddWithValue("@bio", artista.Bio);
-            command.Parameters.AddWithValue("@bio", artista.Id);
+            command.Parameters.AddWithValue("@id", artista.Id);
 
             int retorno = command.ExecuteNonQuery();//para atribuir a quantidade de linhas afetadas no SQL
             Console.WriteLine($"linhas afetadas {retorno}");
+        }
+        public void Deletar(Artista artista)
+        {
+            using var connection = new Connection().ObterConexao();
+            connection.Open();
+
+            string sql = "DELETE FROM Artistas WHERE Id = @id";
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue("@id", artista.Id);
+
+            int retorno = command.ExecuteNonQuery();
+            Console.WriteLine($"Linhas afetadas {retorno}");
         }
     }  
 }

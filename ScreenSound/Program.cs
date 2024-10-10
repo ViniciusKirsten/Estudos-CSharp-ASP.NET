@@ -16,12 +16,13 @@ catch (Exception ex){
 }
 */
 
-//buscando os dados do meu SQL
+
 try
 {
     //adicionando a informação para dentro do banco
     var artistaDAL = new ArtistaDAL();
     artistaDAL.Adicionar(new Artista("Nome Artista","finge que tem uma bio"));
+    //buscando os dados do meu SQL
     var listaArtistas = artistaDAL.listar();
     foreach ( var artist in listaArtistas)
     {

@@ -22,11 +22,11 @@
 - [x] Para saber mais: DAL e DAO
 - [x] Estabelecendo conexão com ADO.NET
 - [x] Faça como eu fiz: utilizando banco de dados
-- [ ] Mão na massa: incluindo os métodos Atualizar e Deletar
-- [ ] O que aprendemos?
+- [x] Mão na massa: incluindo os métodos Atualizar e Deletar
+- [x] O que aprendemos?
 ### Bibliotecas ORM
-- [ ] Projeto da aula anterior
-- [ ] Para saber mais: versão dos pacotes utilizados
+- [x] Projeto da aula anterior
+- [x] Para saber mais: versão dos pacotes utilizados
 - [ ] Instalando o Entity
 - [ ] Para saber mais: bibliotecas ORM
 - [ ] Mapeando Artistas
