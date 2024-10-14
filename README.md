@@ -27,10 +27,10 @@
 ### Bibliotecas ORM
 - [x] Projeto da aula anterior
 - [x] Para saber mais: versão dos pacotes utilizados
-- [ ] Instalando o Entity
-- [ ] Para saber mais: bibliotecas ORM
-- [ ] Mapeando Artistas
-- [ ] Para saber mais: convenções de mapeamento do Entity
+- [x] Instalando o Entity
+- [x] Para saber mais: bibliotecas ORM
+- [x] Mapeando Artistas
+- [x] Para saber mais: convenções de mapeamento do Entity
 - [ ] Refatorando ArtistaDAL
 - [ ] Mão na massa: criando o método recuperar pelo nome
 - [ ] Ajustando o menu

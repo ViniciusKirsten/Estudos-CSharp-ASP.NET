@@ -12,31 +12,39 @@ namespace ScreenSound.Banco
     {
         public IEnumerable<Artista> listar()
         {
-            var lista = new List<Artista>(); //criando uma lista para o artista
-            using var connection = new Connection().ObterConexao(); //criando uma conexao com o banco de dados
-            connection.Open(); //abrundo a conexao
+            //MÉTODO UTILIZANDO ENTITY FRAMEWORK
+            using var context = new ScreenSoundContext();
+            return context.Artistas.ToList(); //assim ele vai listar as informações dos meus artistas
 
+            //**MÉTODO SEM ENTITY FRAMEWORK**
+            //
+            //var lista = new List<Artista>(); //criando uma lista para o artista
+            //using var connection = new Connection().ObterConexao(); //criando uma conexao com o banco de dados
+            //connection.Open(); //abrundo a conexao
+            //
             //Consulta SQL
-            string sql = "SELECT * FROM Artistas";
-
+            //string sql = "SELECT * FROM Artistas";
+            //
             //Para rodar a consulta que eu declarei acima.
-            SqlCommand command = new SqlCommand(sql, connection);
-            using SqlDataReader dataReader = command.ExecuteReader();
-
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //using SqlDataReader dataReader = command.ExecuteReader();
+            //
             //laco de repeticao, adicionando o valor dentro da minha lista
-            while (dataReader.Read())
-            {
-                //essse laco vai repetir toda vez que tiver uma sequencia de informacao que e preciso coletar no banco
-                string nomeArtista = Convert.ToString(dataReader["Nome"]);
-                string bioArtista = Convert.ToString(dataReader["Bio"]);
-                int idArtista = Convert.ToInt32(dataReader["Id"]);
-                Artista artista = new(nomeArtista, bioArtista) { Id = idArtista };//passando as informações para a minha lista 
-
-                lista.Add(artista);
-            }
-
-            return lista;
+            //while (dataReader.Read())
+            //{
+            //    //essse laco vai repetir toda vez que tiver uma sequencia de informacao que e preciso coletar no banco
+            //    string nomeArtista = Convert.ToString(dataReader["Nome"]);
+            //    string bioArtista = Convert.ToString(dataReader["Bio"]);
+            //    int idArtista = Convert.ToInt32(dataReader["Id"]);
+            //    Artista artista = new(nomeArtista, bioArtista) { Id = idArtista };//passando as informações para a minha lista 
+            //
+            //    lista.Add(artista);
+            //}
+            //
+            //return lista;
         }
+
+        /*
         public void Adicionar(Artista artista)
         {
             //Adicionando os dados para o meu banco de dado utilizando essa classe
@@ -85,6 +93,6 @@ namespace ScreenSound.Banco
 
             int retorno = command.ExecuteNonQuery();
             Console.WriteLine($"Linhas afetadas {retorno}");
-        }
+        }*/
     }  
 }

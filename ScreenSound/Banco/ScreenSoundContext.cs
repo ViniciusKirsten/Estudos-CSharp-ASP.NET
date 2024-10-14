@@ -16,6 +16,9 @@ namespace ScreenSound.Banco
     //OBS: Não consegui instalar o Entity Framework
     internal class ScreenSoundContext: DbContext
     {
+        //mapeando a nossa tabela de artistas para a nossa classe de artistas
+        public DbSet<Artista> Artistas { get; set; }  //"Artistas" precisa ser o mesmo nome que a nossa tabela [nome da tabela: Artistas]
+
         //String de conexão, coletada nas propriedades do banco no campo "Cadeia de conexão"
         private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=False;TrustServerCertificate=False; ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         
@@ -24,6 +27,7 @@ namespace ScreenSound.Banco
         {
             optionsBuilder.UseSqlServer(connectionString);
         }
+
         /*
          * MÉTODO ANTIGO DE FAZER A CONEXÃO 
         public SqlConnection ObterConexao()
