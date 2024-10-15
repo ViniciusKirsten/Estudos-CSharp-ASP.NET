@@ -19,7 +19,12 @@ catch (Exception ex){
 
 try
 {
-    var artistaDAL = new ArtistaDAL();
+    var context = new ScreenSoundContext();
+    var artistaDAL = new ArtistaDAL(context);
+
+    var novoArtista = new Artista("Gilberto Gil", "Teste bio") { Id = 2};
+    artistaDAL.Atualizar(novoArtista);
+
     var listaArtistas = artistaDAL.listar();
     foreach( var artista in listaArtistas)
     {

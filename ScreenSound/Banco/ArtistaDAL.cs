@@ -10,10 +10,16 @@ namespace ScreenSound.Banco
 {
     internal class ArtistaDAL
     {
+        //Esse campo e construtor vai ser extraidos pelo meus métodos que chamam o "context"
+        private readonly ScreenSoundContext context;
+        public ArtistaDAL(ScreenSoundContext context)
+        {
+            this.context = context;
+        }
+
         public IEnumerable<Artista> listar()
         {
             //MÉTODO UTILIZANDO ENTITY FRAMEWORK
-            using var context = new ScreenSoundContext();
             return context.Artistas.ToList(); //assim ele vai listar as informações dos meus artistas
 
             //**MÉTODO SEM ENTITY FRAMEWORK**
@@ -43,56 +49,73 @@ namespace ScreenSound.Banco
             //
             //return lista;
         }
-
-        /*
+        
         public void Adicionar(Artista artista)
         {
-            //Adicionando os dados para o meu banco de dado utilizando essa classe
-            //Parte lógica de adicionar a informação para dentro do banco
-            using var connection = new Connection().ObterConexao();
-            connection.Open();
+            //MÉTODO UTILIZANDO ENTITY FRAMEWORK
+            context.Artistas.Add(artista);
+            context.SaveChanges();//para salvar os dados adicionados
 
-            string sql = "INSERT INTO Artistas (Nome, FotoPerfil, Bio) VALUES (@nome, @perfilPadrao, @bio)";
-            SqlCommand command = new SqlCommand(sql, connection);
-
-            command.Parameters.AddWithValue("@nome", artista.Nome);
-            command.Parameters.AddWithValue("@perfilPadrao", artista.FotoPerfil);
-            command.Parameters.AddWithValue("@bio", artista.Bio);
-
-            int retorno = command.ExecuteNonQuery();//para atribuir a quantidade de linhas afetadas no SQL
-            Console.WriteLine($"linhas afetadas {retorno}");
+            //**MÉTODO SEM ENTITY FRAMEWORK**
+            //
+            // --Adicionando os dados para o meu banco de dado utilizando essa classe
+            // --Parte lógica de adicionar a informação para dentro do banco
+            //using var connection = new Connection().ObterConexao();
+            //connection.Open();
+            //
+            //string sql = "INSERT INTO Artistas (Nome, FotoPerfil, Bio) VALUES (@nome, @perfilPadrao, @bio)";
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //
+            //command.Parameters.AddWithValue("@nome", artista.Nome);
+            //command.Parameters.AddWithValue("@perfilPadrao", artista.FotoPerfil);
+            //command.Parameters.AddWithValue("@bio", artista.Bio);
+            //
+            //int retorno = command.ExecuteNonQuery();//para atribuir a quantidade de linhas afetadas no SQL
+            //Console.WriteLine($"linhas afetadas {retorno}");
         }
 
-        //trabalhando nesse método
+        
         public void Atualizar(Artista artista)
         {
+            //MÉTODO UTILIZANDO ENTITY FRAMEWORK
+            context.Artistas.Update(artista);
+            context.SaveChanges();//para salvar os dados atualizados
 
-            using var connection = new Connection().ObterConexao();
-            connection.Open();
-
-            string sql = "UPDATE Artistas SET Nome = @nome, Bio = @bio WHERE Id = @id";
-            SqlCommand command = new SqlCommand(sql, connection);
-
-            command.Parameters.AddWithValue("@nome", artista.Nome);
-            command.Parameters.AddWithValue("@perfilPadrao", artista.FotoPerfil);
-            command.Parameters.AddWithValue("@bio", artista.Bio);
-            command.Parameters.AddWithValue("@id", artista.Id);
-
-            int retorno = command.ExecuteNonQuery();//para atribuir a quantidade de linhas afetadas no SQL
-            Console.WriteLine($"linhas afetadas {retorno}");
+            //**MÉTODO SEM ENTITY FRAMEWORK**
+            //
+            //using var connection = new Connection().ObterConexao();
+            //connection.Open();
+            //
+            //string sql = "UPDATE Artistas SET Nome = @nome, Bio = @bio WHERE Id = @id";
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //
+            //command.Parameters.AddWithValue("@nome", artista.Nome);
+            //command.Parameters.AddWithValue("@perfilPadrao", artista.FotoPerfil);
+            //command.Parameters.AddWithValue("@bio", artista.Bio);
+            //command.Parameters.AddWithValue("@id", artista.Id);
+            //
+            //int retorno = command.ExecuteNonQuery();//para atribuir a quantidade de linhas afetadas no SQL
+            //Console.WriteLine($"linhas afetadas {retorno}");
         }
+
         public void Deletar(Artista artista)
         {
-            using var connection = new Connection().ObterConexao();
-            connection.Open();
+            //MÉTODO UTILIZANDO ENTITY FRAMEWORK
+            context.Artistas.Remove(artista);
+            context.SaveChanges();
 
-            string sql = "DELETE FROM Artistas WHERE Id = @id";
-            SqlCommand command = new SqlCommand(sql, connection);
-
-            command.Parameters.AddWithValue("@id", artista.Id);
-
-            int retorno = command.ExecuteNonQuery();
-            Console.WriteLine($"Linhas afetadas {retorno}");
-        }*/
-    }  
+            //**MÉTODO SEM ENTITY FRAMEWORK**
+            //
+            //using var connection = new Connection().ObterConexao();
+            //connection.Open();
+            //
+            //string sql = "DELETE FROM Artistas WHERE Id = @id";
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //
+            //command.Parameters.AddWithValue("@id", artista.Id);
+            //
+            //int retorno = command.ExecuteNonQuery();
+            //Console.WriteLine($"Linhas afetadas {retorno}");
+        }
+    }
 }
