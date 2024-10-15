@@ -117,5 +117,12 @@ namespace ScreenSound.Banco
             //int retorno = command.ExecuteNonQuery();
             //Console.WriteLine($"Linhas afetadas {retorno}");
         }
+
+        //Essa expressção com o sinal de interrogação é informando que caso o valor não estiver correto ele pode retornar nulo.
+        //É um recurso de nullable reference types, que reforça a segurança contra nulos no código.
+        public Artista? RecuperarPeloNome(string nome)
+        {
+            return context.Artistas.FirstOrDefault(a => a.Nome.Equals(nome)); //Expressão lambda para verificar se o nome é igual ao nome que veio na função
+        }
     }
 }
