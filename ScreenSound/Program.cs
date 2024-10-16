@@ -16,35 +16,32 @@ catch (Exception ex){
 }
 */
 
+//ISSO ERA APENAS PARA TESTAR ENQUANTO NÃO ESTA TUDO CONFIGURADO
+//
+//try
+//{
+//    var context = new ScreenSoundContext();
+//    var artistaDAL = new ArtistaDAL(context);
+//
+//    var novoArtista = new Artista("Gilberto Gil", "Teste bio") { Id = 2};
+//    artistaDAL.Atualizar(novoArtista);
+//
+//    var listaArtistas = artistaDAL.listar();
+//    foreach( var artista in listaArtistas)
+//    {
+//        Console.WriteLine(artista);
+//    }
+//}
+//catch (Exception ex)
+//{
+//
+//    Console.WriteLine(ex.Message);
+//}
+//
+//return;
 
-try
-{
-    var context = new ScreenSoundContext();
-    var artistaDAL = new ArtistaDAL(context);
-
-    var novoArtista = new Artista("Gilberto Gil", "Teste bio") { Id = 2};
-    artistaDAL.Atualizar(novoArtista);
-
-    var listaArtistas = artistaDAL.listar();
-    foreach( var artista in listaArtistas)
-    {
-        Console.WriteLine(artista);
-    }
-}
-catch (Exception ex)
-{
-
-    Console.WriteLine(ex.Message);
-}
-
-return;
-
-Artista ira = new Artista("Ira!", "Banda Ira!");
-Artista beatles = new("The Beatles", "Banda The Beatles");
-
-Dictionary<string, Artista> artistasRegistrados = new();
-artistasRegistrados.Add(ira.Nome, ira);
-artistasRegistrados.Add(beatles.Nome, beatles);
+var context = new ScreenSoundContext();
+var artistaDAL = new ArtistaDAL(context);
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());
