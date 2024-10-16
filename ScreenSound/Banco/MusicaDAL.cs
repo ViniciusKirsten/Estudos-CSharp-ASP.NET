@@ -7,40 +7,48 @@ using System.Threading.Tasks;
 
 namespace ScreenSound.Banco
 {
-    internal class MusicaDAL
+    //"MusicaDAL" herda da classe "DAL", que é um genérico.
+    internal class MusicaDAL : DAL
     {
-        
         private readonly ScreenSoundContext context;
+
         public MusicaDAL(ScreenSoundContext context)
         {
             this.context = context;
         }
 
-        public IEnumerable<Musica> listar()
+        public IEnumerable<Musica> Listar()
         {
-            return context.Musica.ToList();
-        }
-        //TRABALHANDO NESTA CLASSE
-        public void Adicionar(Artista artista)
-        {
-            context.Artistas.Add(artista);
-            context.SaveChanges();
+
+            return context.Musicas.ToList();
+
         }
 
-        public void Atualizar(Artista artista)
+        public void Adicionar(Musica musica)
         {
-            context.Artistas.Update(artista);
+            context.Musicas.Add(musica);
             context.SaveChanges();
+
         }
 
-        public void Deletar(Artista artista)
+        public void Atualizar(Musica musica)
         {
-            context.Artistas.Remove(artista);
+            context.Musicas.Update(musica);
             context.SaveChanges();
+
         }
 
-        public Artista? RecuperarPeloNome(string nome)
+        public void Deletar(Musica musica)
         {
-            return context.Artistas.FirstOrDefault(a => a.Nome.Equals(nome));
+            context.Musicas.Remove(musica);
+            context.SaveChanges();
+
+        }
+
+        public Musica? RecuperarPeloNome(string nome)
+        {
+            return context.Musicas.FirstOrDefault(a => a.Nome.Equals(nome));
+
+        }
     }
 }

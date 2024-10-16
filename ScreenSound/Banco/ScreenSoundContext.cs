@@ -19,7 +19,7 @@ namespace ScreenSound.Banco
         //mapeando a nossa tabela de artistas para a nossa classe de artistas
         public DbSet<Artista> Artistas { get; set; }  //"Artistas" precisa ser o mesmo nome que a nossa tabela [nome da tabela: Artistas]
 
-        public DbSet<Musica> Musica { get; set; }
+        public DbSet<Musica> Musicas { get; set; }
         //String de conexão, coletada nas propriedades do banco no campo "Cadeia de conexão"
         private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=False;TrustServerCertificate=False; ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         
