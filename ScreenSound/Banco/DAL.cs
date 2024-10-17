@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ScreenSound.Banco
 {
-    //Abstract pois eu não vou utilizar nenhum obejto dentro dessa classe
-    internal abstract class DAL <T> where T : class
+
+    internal class DAL <T> where T : class
     {   //Utilizamos o T para determinar um "tipo genérico"
         //"where T : class" assim estamos dizendo que este "T"  vai ser uma classe dentro da nossa aplicação
-        private readonly ScreenSoundContext context;
+        protected readonly ScreenSoundContext context;
 
         protected DAL(ScreenSoundContext context)
         {
@@ -27,7 +27,20 @@ namespace ScreenSound.Banco
             context.Set<T>().Add(objeto);
             context.SaveChanges();
         }
-        public abstract void Atualizar(T objeto);
-        public abstract void Deletar(T objeto);
+        public void Atualizar(T objeto)
+        {
+            context.Set<T>().Update(objeto);
+            context.SaveChanges();
+        }
+        public void Deletar(T objeto)
+        {
+            context.Set<T>().Remove(objeto);
+            context.SaveChanges();
+        }
+
+        public T? RecuperarPor(Func<T, bool> condicao) //O "Func< , >" é um tipo que representa uma função que retorna um valor, uma verificação
+        {
+            return context.Set<T>().FirstOrDefault(condicao); //sendo assim ele vai trazer o primeiro resultado ou o valor padrão
+        }
     }
 }

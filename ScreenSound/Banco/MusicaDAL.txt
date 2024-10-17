@@ -1,0 +1,21 @@
+﻿using ScreenSound.Modelos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//
+//
+// OBS: USAMOS ESSE TIPO DE MÉTODO ENQUANTO ESTAVAMOS IMPLEMENTADO OS TIPOS MAIS GENÉRICOS
+//
+//
+
+namespace ScreenSound.Banco
+{
+    //"MusicaDAL" herda da classe "DAL", que é um genérico.
+    internal class MusicaDAL : DAL <Musica> // "Musica" se refere ao campo T que é um tipo genérico no meu DAL.
+    {
+        public MusicaDAL(ScreenSoundContext context) : base(context) { } //"base(contex)" representa que ele vai pegar a informação da nossa classe DAL
+    }
+}

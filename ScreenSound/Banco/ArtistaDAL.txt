@@ -6,6 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//
+//
+//  OBS: ESSE É O MÉTODO ANTIGO DE COMO IMPLEMENTAVA O CRUD ANTES DE USAR AS FORMAS MAIS GENERICAS
+//
+//
+
 namespace ScreenSound.Banco
 {
     internal class ArtistaDAL

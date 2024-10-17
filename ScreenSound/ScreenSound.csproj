@@ -12,11 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Banco\ArtistaDAL.txt" />
     <None Remove="Banco\Connection.txt" />
+    <None Remove="Banco\MusicaDAL.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Banco\ArtistaDAL.txt" />
     <Compile Include="Banco\Connection.txt" />
+    <Compile Include="Banco\MusicaDAL.txt" />
   </ItemGroup>
 
   <ItemGroup>
