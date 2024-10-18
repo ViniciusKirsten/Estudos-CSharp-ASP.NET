@@ -13,7 +13,7 @@ namespace ScreenSound.Banco
         //"where T : class" assim estamos dizendo que este "T"  vai ser uma classe dentro da nossa aplicação
         protected readonly ScreenSoundContext context;
 
-        protected DAL(ScreenSoundContext context)
+        public DAL(ScreenSoundContext context)
         {
             this.context = context;
         }
@@ -37,7 +37,6 @@ namespace ScreenSound.Banco
             context.Set<T>().Remove(objeto);
             context.SaveChanges();
         }
-
         public T? RecuperarPor(Func<T, bool> condicao) //O "Func< , >" é um tipo que representa uma função que retorna um valor, uma verificação
         {
             return context.Set<T>().FirstOrDefault(condicao); //sendo assim ele vai trazer o primeiro resultado ou o valor padrão
