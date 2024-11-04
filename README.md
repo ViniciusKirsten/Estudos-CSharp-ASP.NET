@@ -31,27 +31,27 @@
 - [x] Para saber mais: bibliotecas ORM
 - [x] Mapeando Artistas
 - [x] Para saber mais: convenções de mapeamento do Entity
-- [ ] Refatorando ArtistaDAL
-- [ ] Mão na massa: criando o método recuperar pelo nome
-- [ ] Ajustando o menu
-- [ ] Refatorando DAL com EF
-- [ ] Faça como eu fiz: aplicando o Entity Framework
-- [ ] Mão na massa: persistindo músicas
-- [ ] O que aprendemos?
+- [x] Refatorando ArtistaDAL
+- [x] Mão na massa: criando o método recuperar pelo nome
+- [x] Ajustando o menu
+- [x] Refatorando DAL com EF
+- [x] Faça como eu fiz: aplicando o Entity Framework
+- [x] Mão na massa: persistindo músicas
+- [x] O que aprendemos?
 ### Generics
-- [ ] Projeto da aula anterior
-- [ ] Utilizando Generics
-- [ ] Mão na massa: MusicaDAL com genérico
-- [ ] Implementando métodos genéricos
-- [ ] Utilizando Func
-- [ ] Para saber mais: Func
-- [ ] Otimizando o acesso ao banco com Generics
-- [ ] Faça como eu fiz: implementando DAL genérico
-- [ ] Mão na massa: atualizando os menus
-- [ ] O que aprendemos?
+- [x] Projeto da aula anterior
+- [x] Utilizando Generics
+- [x] Mão na massa: MusicaDAL com genérico
+- [x] Implementando métodos genéricos
+- [x] Utilizando Func
+- [x] Para saber mais: Func
+- [x] Otimizando o acesso ao banco com Generics
+- [x] Faça como eu fiz: implementando DAL genérico
+- [x] Mão na massa: atualizando os menus
+- [x] O que aprendemos?
 ### Migrations
-- [ ] Projeto da aula anterior
-- [ ] Utilizando Migrations
+- [x] Projeto da aula anterior
+- [x] Utilizando Migrations
 - [ ] Para saber mais: Migrations
 - [ ] Update-Database
 - [ ] Inserindo dados
